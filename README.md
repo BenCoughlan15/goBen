@@ -27,13 +27,16 @@ terraform apply
 
 ## Q2.  What would you do to a Kubernetes cluster to run production workloads?
 
-> 1: Namespacing 2: IAM roles/permissions for ebs/volume autoscaling 3:
-> Kube2iam/Google-to-iam 4: RBAC 5: external DNS 6: Autoscaling the
-> cluster/ auto provisioning the cluster.  7: Telemetry -
-> APM/Logs/Metrics/Active checks.  8: istio/LinkerD 9: A solid
-> deployment tool, one that can abstract away the kubernetes api from
-> developers. ([i.e.
-> shipcat](https://github.com/Babylonpartners/shipcat))
+ 1. Namespacing 
+ 2. IAM roles/permissions for ebs/volume autoscaling 
+ 3. Kube2iam/Google-to-iam 
+ 4. RBAC 
+ 5. external DNS 
+ 6. Autoscaling the cluster/ auto provisioning the cluster. 
+ 7.  Telemetry - APM/Logs/Metrics/Active checks.  
+ 8. istio/LinkerD 
+ 9. A solid deployment tool, one that can abstract away the kubernetes api from developers. ([i.e. shipcat](https://github.com/Babylonpartners/shipcat))
+ 10. Ingress 
 
 
 
@@ -54,10 +57,10 @@ terraform apply
 
 ## Q4.    How would you globally serve internet traffic to an API deployed in three regions using same domain name?
 
-> 1: Ensure Data replication is handled in all regions. 
-> 2. Ensure you have a global network infrastructure, and use vpc peering where necessary. 
-> 3. Use Cross Region load balancing 
-> 4. Use Global Routing Mode.
+ 1. Ensure Data replication is handled in all regions. 
+ 2. Ensure you have a global network infrastructure, and use vpc peering where necessary.  
+ 3. Use Cross Region load balancing  
+ 4. Use Global Routing Mode.
 
 ## Q5. What is a shared VPC and how does it compare to vpc peering?
 
