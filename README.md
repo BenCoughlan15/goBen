@@ -14,16 +14,14 @@ terraform apply
 
 ## Q1.  When would you use Google Kubernetes Engine managed Kubernetes instead of having full control with a full deployment using Kops/Rancher etc?
 
-> I would use GKE, or another managed kubernetes in most instances, as
-> it comes with a plethora of stability benefits for free off the bat. 
-> 
-> The instances where I would look at running Kops, or similar, are:  1:
-> Where we don't have the luxury of GKE/AWS in place, i.e. in private
-> cloud, bare metal, dev machine, local machine, etc.  2: A region
-> without a public cloud vendor. 3: Where you have to install a cluster
-> in an air gapped location ( i.e. in another clients site ). 4: Where
-> you're trying to make and maintain significant hosting cost
-> reductions.
+I would use GKE, or another managed kubernetes in most instances, as
+it comes with a plethora of stability benefits for free off the bat. 
+ The instances where I would look at running Kops, or similar, are:  
+
+ 1. Where we don't have the luxury of GKE/AWS in place, i.e. in private cloud, bare metal, dev machine, local machine, etc.  
+ 2. A region without a public cloud vendor. 
+ 3. Where you have to install a cluster in an air gapped location ( i.e. in another clients site ). 
+ 4. Where you're trying to make and maintain significant hosting cost reductions.
 
 ## Q2.  What would you do to a Kubernetes cluster to run production workloads?
 
@@ -42,18 +40,18 @@ terraform apply
 
 ## Q3.   Explain the difference between an ingress controller and a service, when would you use either?
 
-> A Service generally sits in front/manages a group of pods.  An Ingress
-> Controller generally sits in front of one or more services. 
-> 
-> Ingress is useful for opening multiple services, it can do so by
-> namespace, or even by cluster, and can save you a lot in hosting of
-> load balancers, you also get a lot of features for free (like SSL,
-> Auth, Routing, etc). Newer ingress controllers like GCLB and istio,
-> can handle much more for you. 
-> 
-> A Service on the other hand, will sit in front of a group of pods for
-> you, and while the pods will be transient, and may disappear at any
-> time, the service can account for this.
+ A Service generally sits in front/manages a group of pods.  An Ingress
+ Controller generally sits in front of one or more services. 
+ 
+ Ingress is useful for opening multiple services, it can do so by
+ namespace, or even by cluster, and can save you a lot in hosting of
+ load balancers, you also get a lot of features for free (like SSL,
+ Auth, Routing, etc). Newer ingress controllers like GCLB and istio,
+ can handle much more for you. 
+ 
+ A Service on the other hand, will sit in front of a group of pods for
+you, and while the pods will be transient, and may disappear at any
+ time, the service can account for this.
 
 ## Q4.    How would you globally serve internet traffic to an API deployed in three regions using same domain name?
 
@@ -64,18 +62,14 @@ terraform apply
 
 ## Q5. What is a shared VPC and how does it compare to vpc peering?
 
-> When you use VPC peering, GCP will create routes in each VPC to link
-> them, these links may clash if network topologies aren't thought out
-> in advance, and traffic may run publically, causing lag. 
-> 
-> A Shared VPC will scale much better, and tend to be much easier to
-> manage.
+ - When you use VPC peering, GCP will create routes in each VPC to link them, these links may clash if network topologies aren't thought out in advance, and traffic may run publically, causing lag. 
+ - A Shared VPC will scale much better, and tend to be much easier to manage.
 
 
 ## Q6.How do you ensure the state files in Terraform are lockable so are not overwritten by a work colleague?
 
-> In AWS: link them to a DynamoDB table, in GCP, use GCS with state
-> locking.
+ - In AWS: link them to a DynamoDB table
+ - in GCP, use GCS with state locking.
 
 ## Q7.  When would you use Ansible/Salt instead of terraform?
 
